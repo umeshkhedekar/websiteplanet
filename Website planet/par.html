@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="form-container">
+        <form action="/submit" method="POST">
+            <h2>Select Service</h2>
+            <div class="services">
+                <label class="service-option">
+                    <input type="radio" name="service" value="family-financial-planning" checked>
+                    <span class="service-info">
+                        <span class="service-name">Family financial planning</span>
+                        <span class="service-duration">1 hour</span>
+                    </span>
+                </label>
+                <label class="service-option">
+                    <input type="radio" name="service" value="investment-planning-discussion">
+                    <span class="service-info">
+                        <span class="service-name">Investment Planning discussion</span>
+                        <span class="service-duration">1 hour</span>
+                    </span>
+                </label>
+                <!-- Add more services similarly -->
+            </div>
+
+            <h2>Select Time</h2>
+            <div class="time-selection">
+                <input type="date" id="date" name="date">
+                <div class="time-slots">
+                    <button type="button" class="time-slot">9:00 am</button>
+                    <button type="button" class="time-slot selected">12:00 pm</button>
+                    <button type="button" class="time-slot">3:00 pm</button>
+                    <!-- Add more time slots similarly -->
+                </div>
+            </div>
+
+            <h2>Add your details</h2>
+            <div class="personal-details">
+                <label>
+                    <span>Name</span>
+                    <input type="text" name="name" required>
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" required>
+                </label>
+                <label>
+                    <span>Phone</span>
+                    <input type="tel" name="phone" required>
+                </label>
+                <label>
+                    <span>Notes (optional)</span>
+                    <textarea name="notes"></textarea>
+                </label>
+            </div>
+
+            <div class="agreement">
+                <input type="checkbox" name="agreement" required>
+                <span>By clicking below you agree to these <a href="#">Privacy Policies</a>.</span>
+            </div>
+
+            <button type="submit" class="submit-button">Book Now</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <!-- ===== CSS ===== -->
+   <link rel="stylesheet" href="style.css">
+  
+       
+   <!-- ===== Boxicons CSS ===== -->
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+     <!--==== Cdn link ====-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!-- ===== Title ===== -->
+    <title>Here me</title>
+    <link rel="icon" href="./Image/306921013_180349474498662_2696928526696293829_n.jpg" type="image/x-icon">
+</head>
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#"><>Mywebsite</a></span>
+    
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#"><> Mywebsite</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+    
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Solution_stack#Full-stack_developer">About</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="login"><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+    
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+    
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+    
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="s1">
+       <div class="s2">
+        <h2>Select Services</h2>
+        <form>
+            <div class="services">
+                <label class="serviceZ">
+                
+                    <input type="radio" name="service" value="investment-planning-discussion">
+                    <span class="service-info">
+                        <span class="service-name">Web development</span>
+                        
+                    </span>
+                </label>
+                
+                    <label class="serviceA">
+                        <input type="radio" name="service" value="investment-planning-discussion">
+                        <span class="service-info">
+                            <span class="service-name">App development</span>
+                            
+                        </span><br>
+                    </label> <br> <br>
+                
+                   
+                    <label class="serviceB">
+                        <input type="radio" name="service" value="investment-planning-discussion">
+                        <span class="service-info">
+                            <span class="service-name">Web design </span>
+                            
+                        </span>
+                    </label>
+                    <label class="serviceC">
+                        <input type="radio" name="service" value="investment-planning-discussion">
+                        <span class="service-info">
+                            <span class="service-name">Database</span>
+                            
+                        </span>
+                    </label>
+
+                    
+                        <h2>Your information</h2>
+                       
+                            <label>Name <span>*</span></label>
+                            <input type="text" name="name" placeholder="First" required>       <input type="text" name="middle" placeholder="Middale" required>        <input type="text" name="Last" placeholder="Last" required>
+                       
+                  
+                   
+        </form>
+       </div>
+    </div>
+    
+
+</body>
+<script>
+    const body = document.querySelector("body"),
+    nav = document.querySelector("nav"),
+    modeToggle = document.querySelector(".dark-light"),
+    searchToggle = document.querySelector(".searchToggle"),
+    sidebarOpen = document.querySelector(".sidebarOpen"),
+    siderbarClose = document.querySelector(".siderbarClose");
+
+    let getMode = localStorage.getItem("mode");
+        if(getMode && getMode === "dark-mode"){
+          body.classList.add("dark");
+        }
+
+// js code to toggle dark and light mode
+    modeToggle.addEventListener("click" , () =>{
+      modeToggle.classList.toggle("active");
+      body.classList.toggle("dark");
+
+      // js code to keep user selected mode even page refresh or file reopen
+      if(!body.classList.contains("dark")){
+          localStorage.setItem("mode" , "light-mode");
+      }else{
+          localStorage.setItem("mode" , "dark-mode");
+      }
+    });
+
+// js code to toggle search box
+      searchToggle.addEventListener("click" , () =>{
+      searchToggle.classList.toggle("active");
+    });
+
+    
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+  nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+  let clickedElm = e.target;
+
+  if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+      nav.classList.remove("active");
+  }
+});
+
+</script>
+</html>

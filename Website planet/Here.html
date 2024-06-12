@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- ===== CSS ===== -->
+   <link rel="stylesheet" href="style.css">
+  
+       
+   <!-- ===== Boxicons CSS ===== -->
+   <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+     <!--==== Cdn link ====-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!-- ===== Title ===== -->
+    <title>Here me</title>
+    <link rel="icon" href="./Image/306921013_180349474498662_2696928526696293829_n.jpg" type="image/x-icon">
+</head>
+<body>
+    <nav>
+        <div class="nav-bar">
+            <i class='bx bx-menu sidebarOpen' ></i>
+            <span class="logo navLogo"><a href="#"><>Mywebsite</a></span>
+    
+            <div class="menu">
+                <div class="logo-toggle">
+                    <span class="logo"><a href="#"><> Mywebsite</a></span>
+                    <i class='bx bx-x siderbarClose'></i>
+                </div>
+    
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://en.wikipedia.org/wiki/Solution_stack#Full-stack_developer">About</a></li>
+                    <li><a href="register.html">Register</a></li>
+                    <li><a href="service.html">Services</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="login"><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+    
+            <div class="darkLight-searchBox">
+                <div class="dark-light">
+                    <i class='bx bx-moon moon'></i>
+                    <i class='bx bx-sun sun'></i>
+                </div>
+    
+                <div class="searchBox">
+                   <div class="searchToggle">
+                    <i class='bx bx-x cancel'></i>
+                    <i class='bx bx-search search'></i>
+                   </div>
+    
+                    <div class="search-field">
+                        <input type="text" placeholder="Search...">
+                        <i class='bx bx-search'></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+     <!----------name---------------------->
+     <div class="main">
+        <div class="name">
+            <h3>Hello...</h3>
+            <h1>I Am <span>UMESH KHEDEKAR</span></h1>
+            <h3>  '<span></span></h3>
+            <button><a href="heremi.html">Here me</a></button>
+        </div>
+        </div>
+    
+</body>
+<script>
+    const body = document.querySelector("body"),
+    nav = document.querySelector("nav"),
+    modeToggle = document.querySelector(".dark-light"),
+    searchToggle = document.querySelector(".searchToggle"),
+    sidebarOpen = document.querySelector(".sidebarOpen"),
+    siderbarClose = document.querySelector(".siderbarClose");
+
+    let getMode = localStorage.getItem("mode");
+        if(getMode && getMode === "dark-mode"){
+          body.classList.add("dark");
+        }
+
+// js code to toggle dark and light mode
+    modeToggle.addEventListener("click" , () =>{
+      modeToggle.classList.toggle("active");
+      body.classList.toggle("dark");
+
+      // js code to keep user selected mode even page refresh or file reopen
+      if(!body.classList.contains("dark")){
+          localStorage.setItem("mode" , "light-mode");
+      }else{
+          localStorage.setItem("mode" , "dark-mode");
+      }
+    });
+
+// js code to toggle search box
+      searchToggle.addEventListener("click" , () =>{
+      searchToggle.classList.toggle("active");
+    });
+
+    
+//   js code to toggle sidebar
+sidebarOpen.addEventListener("click" , () =>{
+  nav.classList.add("active");
+});
+
+body.addEventListener("click" , e =>{
+  let clickedElm = e.target;
+
+  if(!clickedElm.classList.contains("sidebarOpen") && !clickedElm.classList.contains("menu")){
+      nav.classList.remove("active");
+  }
+});
+
+/*----typing */
+const dynamicText = document.querySelector("h3 span");
+const words = ["Fullstack devloper  ", "Web design", "Website devlopment ", "App development"];
+
+// Variables to track the position and deletion status of the word
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+const typeEffect = () => {
+  const currentWord = words[wordIndex];
+  const currentChar = currentWord.substring(0, charIndex);
+  dynamicText.textContent = currentChar;
+  dynamicText.classList.add("stop-blinking");
+
+  if (!isDeleting && charIndex < currentWord.length) {
+      // If condition is true, type the next character
+      charIndex++;
+      setTimeout(typeEffect, 100);
+  } else if (isDeleting && charIndex > 0) {
+      // If condition is true, remove the previous character
+      charIndex--;
+      setTimeout(typeEffect, 100);
+  } else {
+      // If word is deleted then switch to the next word
+      isDeleting = !isDeleting;
+      dynamicText.classList.remove("stop-blinking");
+      wordIndex = !isDeleting ? (wordIndex + 1) % words.length : wordIndex;
+      setTimeout(typeEffect, 1200);
+  }
+}
+typeEffect();
+
+
+
+
+</script>
+</html>

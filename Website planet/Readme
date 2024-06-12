@@ -1,0 +1,78 @@
+
+* ( Page 1 ): Here me  ----------> * use card & box shadow color black or men 's icon-colors-blue, and indicaters icon -colors-blue,
+                                    indicaters link use icons , hover indicaters animeted .
+                                    this page open text name i' am umesh khedekar and others .
+
+* ( page 2 ): About us ----------> * Note : same right first page just name & icons changes
+
+* ( page 3 ): Update ------------> *  Note : same right first page just name & icons changes
+        
+
+
+#scrollToTopBtn:hover {
+   
+}
+
+#progressContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+   
+   z-index: 1000;
+}
+
+#progressBar {
+    height: 100%;
+    background: #4caf50;
+    width: 0%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#scrollToTopBtn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    background-color: #333;
+    color: white;
+    border: none;
+    outline: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Hidden by default */
+}
+
+#scrollToTopBtn:hover {
+    background-color: #555;
+}
+
+#progressContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #ccc;
+    z-index: 99;
+}
+
+#progressBar {
+    height: 100%;
+    background: #4caf50;
+    width: 0%;
+}
